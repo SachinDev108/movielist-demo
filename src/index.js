@@ -14,19 +14,19 @@ import { DisplayMsg, Favorites } from 'components'
 
 const routeMiddleware = routerMiddleware(hashHistory)
 const store = createStore(movieApp, composeWithDevTools(applyMiddleware(thunkMiddleware, routeMiddleware)))
-const history = syncHistoryWithStore(hashHistory, store);
+const history = syncHistoryWithStore(hashHistory, store)
 
 ReactDOM.render(
   <Provider store={store}>
     <Router history={history} >
       <Route path="/" component={App}>
-        <IndexRoute component={MovieContainer} />
+        <IndexRoute component={MovieContainer}/>
         <Route path="/movie/:id" component={MovieDetail} />
         <Route path="/search/:keyword" component={MovieContainer} />
-        <Route path="/favorites" component={Favorites} />
+        <Route path="favorites" component={Favorites} />
         <Route path="*" component={DisplayMsg} />
       </Route>
     </Router>
   </Provider>,
-  document.getElementById('root'),
+  document.getElementById('root')
 )
