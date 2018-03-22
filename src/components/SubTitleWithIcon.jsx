@@ -1,9 +1,8 @@
-import React from 'react';
-import { Glyphicon } from 'react-bootstrap'
-import styled from 'styled-components'
+import React from 'react'
+import { Icon } from 'react-fa'
 
-export default function SubTitleWithIcon(props){
-  return(
-      <h4><Glyphicon glyph={props.icon} /> {props.title}</h4>
-  );
+export default function SubTitleWithIcon(props) {
+  return (
+    <h4><Icon name={props.icon}/> {props.title}</h4>
+  )
 }

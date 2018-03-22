@@ -1,38 +1,46 @@
-import React , { Component } from 'react';
-import SubTitle from './SubTitle'
-import SubTitleWithIcon from './SubTitleWithIcon'
-import { URL_IMG, IMG_SIZE_LARGE } from '../const'
+import React from 'react'
+import { URL_IMG, IMG_SIZE_LARGE } from 'const'
 import { Image } from 'react-bootstrap'
 import styled from 'styled-components'
-import { Glyphicon } from 'react-bootstrap'
+import { Icon } from 'react-fa'
 
-export default function Poster(props){
+export default function Poster(props) {
 
   const StyledImg = styled.div`
-    &:hover .image{
+    &:hover .image {
        opacity:1;
     }
-    &:hover .title{
+    &:hover .title {
        opacity: ${props.info ? 1:0};
     }
-  `;
+    .image {
+      width: 100%;
+    }
+  `
   const Info =  styled.div`
-      position: absolute;
       top: 75%;
       margin:10px;
-      color:white;
       font-weight:bold;
-      opacity:0;
-  `;
+  `
   return(
     <StyledImg>
       <Image className="image" key={props.id} src={URL_IMG+IMG_SIZE_LARGE+props.path} responsive />
       {props.info &&
       <Info className="title">
-        <h4>{props.title}</h4>
-        <Glyphicon glyph={'star'} /> {props.voteAverage} &nbsp;&nbsp; {props.release_date.substring(0,4)}
+        <div className='movie-name'>
+          {props.title} ({props.release_date.substring(0,4)})
+        </div>
+        <div className='movie-ratings'>
+          <Icon name={'star'} /> {~~props.voteAverage}
+          { props.favorite ?
+            <span className='favorite'>
+              <Icon name={'heart'} className='favorite-icon'/>
+            </span>
+            : null
+          }
+        </div>  
       </Info>
       }
     </StyledImg>
-  );
+  )
 }

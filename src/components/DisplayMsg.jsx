@@ -1,10 +1,5 @@
-import React from 'react';
+import React from 'react'
 
- export default function DisplayMsg(props) {
+const DisplayMsg = props => props.hasOwnProperty('message') ? <div>{props.message}</div> : <div>Not Found</div>
 
-    if(!props.hasOwnProperty('message')){
-      return(<div>Not Found</div>);
-    } else  {
-      return(<div>{props.message}</div>);
-    }
-}
+export default DisplayMsg

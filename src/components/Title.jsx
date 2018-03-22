@@ -1,11 +1,11 @@
 import React from 'react'
 
-export default function Title(props){
+export default function Title(props) {
   const style = {
     fontWeight: 'bold',
     textTransform: 'uppercase'
-  };
-  return(
+  }
+  return (
     <h1 style={style}> {props.title} </h1>
-  );
+  )
 }

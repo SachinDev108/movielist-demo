@@ -19,6 +19,78 @@
 }
 
 @keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+  from { transform: rotate(0deg) }
+  to { transform: rotate(360deg) }
+}
+
+.pagination {
+ display: -webkit-box;
+ display: -ms-flexbox;
+ padding-left: 0;
+ list-style: none;
+ border-radius: .25rem;
+ justify-content: space-between;
+ width: 725px;
+ margin: 0 auto;
+ padding: 15px;
+ display: flex;
+ align-items: center;
+}
+
+.pagination a {
+ color: #337ab7;
+ float: left;
+ padding: 8px 16px;
+ text-decoration: none;
+ transition: background-color .3s;
+ border: 1px solid #ddd;
+}
+
+.pagination li.active a {
+ background-color: #337ab7;
+ color: white;
+}
+
+.pagination li:hover:not(.active) {
+  background-color: #ddd;
+}
+
+.topPadding {
+  padding: 20px;
+}
+
+.movie-name {
+  float: left;
+  width: 74%;
+  font-size: 15px;
+}
+
+.movie-ratings {
+  float: left;
+  width: 25%
+}
+
+.favorite {
+  margin-left: 4px;
+}
+
+.favorite-icon {
+  color: red;
+}
+
+.favorite-icon-detail {
+  color: red;
+  margin-right: 10px;
+}
+
+.favorite-button {
+  width: 50px;
+  height: 30px;
+  position: relative;
+  top: 8px;
+  left: 10px;
+}
+
+.movie-title {
+  width: 80%;
 }
