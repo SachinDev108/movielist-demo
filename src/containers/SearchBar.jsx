@@ -3,7 +3,6 @@ import { Navbar, Image } from 'react-bootstrap/lib'
 import { connect } from 'react-redux'
 import { push } from 'react-router-redux'
 import Autosuggest from 'react-autosuggest'
-import logo from 'images/logo_square.svg'
 // eslint-disable-next-line
 import theme from './search.css'
 import { URL_SEARCH, API_KEY_ALT, URL_IMG, IMG_SIZE_XSMALL } from 'const'
@@ -77,7 +76,7 @@ class SearchBar extends Component {
   renderSuggestion = (suggestion) => {
    return (
      <a>
-       <img className="searchResult-image" alt='Search Result' src={suggestion.img == null ? logo: URL_IMG+IMG_SIZE_XSMALL+suggestion.img } />
+       <img className="searchResult-image" alt='Search Result' src={suggestion.img == null ? null: URL_IMG+IMG_SIZE_XSMALL+suggestion.img } />
          <div className="searchResult-text">
            <div className="searchResult-name">
              {suggestion.title}
